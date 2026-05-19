@@ -420,7 +420,23 @@ a[href^="tel"]:hover,a[href^="mailto"]:hover{color:var(--gold);text-decoration:n
     <!-- ESTATE PLANNING wordmark -->
     <div class="hero-ep" id="hEP">Estate Planning</div>
 
-    <!-- Tree icon removed -->
+    <!-- Tree icon — gold SVG -->
+    <div id="hTree" style="opacity:0;margin:18px auto 14px;display:flex;justify-content:center">
+      <svg width="48" height="54" viewBox="0 0 48 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- trunk -->
+        <line x1="24" y1="54" x2="24" y2="32" stroke="#c9a96e" stroke-width="2"/>
+        <!-- main canopy -->
+        <ellipse cx="24" cy="24" rx="16" ry="14" stroke="#c9a96e" stroke-width="1.2" fill="none"/>
+        <!-- inner detail branches -->
+        <line x1="24" y1="32" x2="16" y2="22" stroke="#c9a96e" stroke-width=".8"/>
+        <line x1="24" y1="32" x2="32" y2="22" stroke="#c9a96e" stroke-width=".8"/>
+        <line x1="24" y1="28" x2="24" y2="14" stroke="#c9a96e" stroke-width=".8"/>
+        <!-- small leaf clusters -->
+        <ellipse cx="16" cy="18" rx="6" ry="4" stroke="#c9a96e" stroke-width=".8" fill="none" transform="rotate(-20 16 18)"/>
+        <ellipse cx="32" cy="18" rx="6" ry="4" stroke="#c9a96e" stroke-width=".8" fill="none" transform="rotate(20 32 18)"/>
+        <ellipse cx="24" cy="11" rx="6" ry="4" stroke="#c9a96e" stroke-width=".8" fill="none"/>
+      </svg>
+    </div>
 
     <!-- Tagline -->
     <h1 class="hero-tagline" id="hTag">Professional. Personal. Protecting What Matters.</h1>
@@ -786,6 +802,7 @@ setTimeout(()=>{
   gsap.to('#hVC',{opacity:1,y:0,duration:1.2,ease:'power3.out'});
   gsap.to('#hDiv',{opacity:1,duration:.8,delay:.6});
   gsap.to('#hEP',{opacity:1,duration:.9,delay:.8});
+  gsap.to('#hTree',{opacity:1,duration:.8,delay:1.0});
 
   gsap.to('#hTag',{opacity:1,duration:.9,delay:1.2,ease:'power3.out'});
   gsap.to('#hServices',{opacity:1,duration:.9,delay:1.5});
