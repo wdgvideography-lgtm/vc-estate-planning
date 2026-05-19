@@ -401,45 +401,92 @@ a[href^="tel"]:hover,a[href^="mailto"]:hover{color:var(--gold);text-decoration:n
   </svg>
 
   <div class="hero-content">
-    <!-- V.C. logo image with transparent bg -->
-    <div id="hVC" style="opacity:0;transform:translateY(30px);margin:0 auto 8px">
-      <img src="https://base44.app/api/apps/6a0c1534017166f536b1ac32/files/mp/public/6a0c1534017166f536b1ac32/af5e0ae95_vc_logo_transparent.png" 
-           alt="V.C. Estate Planning Logo"
-           style="width:min(520px,88vw);height:auto;display:block;margin:0 auto;filter:drop-shadow(0 2px 12px rgba(0,0,0,0.3))"/>
+
+    <!-- VC MONOGRAM -->
+    <div class="hero-vc" id="hVC">V.C.</div>
+
+    <!-- GOLD DIVIDER — olive branch matching logo exactly -->
+    <div class="hero-divider" id="hDiv">
+      <div class="hero-divider-line"></div>
+      <svg width="90" height="30" viewBox="0 0 90 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- stem -->
+        <path d="M8 16 Q45 9 82 16" stroke="#c9a96e" stroke-width="1.3" fill="none"/>
+        <!-- left leaves -->
+        <ellipse cx="22" cy="12" rx="7" ry="3" fill="none" stroke="#c9a96e" stroke-width="1" transform="rotate(-30 22 12)"/>
+        <ellipse cx="34" cy="10" rx="7" ry="3" fill="none" stroke="#c9a96e" stroke-width="1" transform="rotate(-20 34 10)"/>
+        <ellipse cx="45" cy="9" rx="6" ry="2.5" fill="none" stroke="#c9a96e" stroke-width="1" transform="rotate(0 45 9)"/>
+        <!-- right leaves (mirror) -->
+        <ellipse cx="68" cy="12" rx="7" ry="3" fill="none" stroke="#c9a96e" stroke-width="1" transform="rotate(30 68 12)"/>
+        <ellipse cx="56" cy="10" rx="7" ry="3" fill="none" stroke="#c9a96e" stroke-width="1" transform="rotate(20 56 10)"/>
+      </svg>
+      <div class="hero-divider-line"></div>
     </div>
 
-    <!-- Tagline -->
+    <!-- ESTATE PLANNING -->
+    <div class="hero-ep" id="hEP">Estate Planning</div>
+
+    <!-- TREE — matching logo oak/olive tree exactly -->
+    <div id="hTree" style="opacity:0;margin:16px auto 6px;display:flex;justify-content:center">
+      <svg width="80" height="76" viewBox="0 0 80 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- trunk -->
+        <path d="M40 75 L40 48" stroke="#c9a96e" stroke-width="2.5" stroke-linecap="round"/>
+        <!-- root flare -->
+        <path d="M40 72 Q30 70 22 73" stroke="#c9a96e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M40 72 Q50 70 58 73" stroke="#c9a96e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <!-- main branches -->
+        <path d="M40 54 Q28 46 18 38" stroke="#c9a96e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M40 54 Q52 46 62 38" stroke="#c9a96e" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <path d="M40 50 Q40 38 40 28" stroke="#c9a96e" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+        <path d="M40 44 Q32 38 26 30" stroke="#c9a96e" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+        <path d="M40 44 Q48 38 54 30" stroke="#c9a96e" stroke-width="1.1" fill="none" stroke-linecap="round"/>
+        <path d="M40 38 Q34 30 30 22" stroke="#c9a96e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <path d="M40 38 Q46 30 50 22" stroke="#c9a96e" stroke-width="1" fill="none" stroke-linecap="round"/>
+        <!-- canopy clusters — dense overlapping ovals like logo -->
+        <ellipse cx="40" cy="16" rx="11" ry="8" stroke="#c9a96e" stroke-width="1.2" fill="none"/>
+        <ellipse cx="26" cy="22" rx="10" ry="7" stroke="#c9a96e" stroke-width="1.1" fill="none"/>
+        <ellipse cx="54" cy="22" rx="10" ry="7" stroke="#c9a96e" stroke-width="1.1" fill="none"/>
+        <ellipse cx="16" cy="32" rx="9" ry="6.5" stroke="#c9a96e" stroke-width="1" fill="none"/>
+        <ellipse cx="64" cy="32" rx="9" ry="6.5" stroke="#c9a96e" stroke-width="1" fill="none"/>
+        <ellipse cx="30" cy="12" rx="8" ry="5.5" stroke="#c9a96e" stroke-width="1" fill="none"/>
+        <ellipse cx="50" cy="12" rx="8" ry="5.5" stroke="#c9a96e" stroke-width="1" fill="none"/>
+        <ellipse cx="22" cy="32" rx="7" ry="5" stroke="#c9a96e" stroke-width="1" fill="none"/>
+        <ellipse cx="58" cy="32" rx="7" ry="5" stroke="#c9a96e" stroke-width="1" fill="none"/>
+        <ellipse cx="40" cy="8" rx="7" ry="5" stroke="#c9a96e" stroke-width="1" fill="none"/>
+      </svg>
+    </div>
+
+    <!-- TAGLINE -->
     <h1 class="hero-tagline" id="hTag">Professional. Personal. Protecting What Matters.</h1>
 
-    <!-- Service icons strip -->
-    <div class="hero-services" id="hServices">
-      <div class="hero-service">
-        <div class="hero-service-label">Wills</div>
-      </div>
-      <div class="hero-service">
-        <div class="hero-service-label">Lasting Powers<br>of Attorney</div>
-      </div>
-      <div class="hero-service">
-        <div class="hero-service-label">Estate<br>Protection</div>
-      </div>
-      <div class="hero-service">
-        <div class="hero-service-label">Trusts</div>
-      </div>
-      <div class="hero-service">
-        <div class="hero-service-label">Probate<br>Guidance</div>
-      </div>
-      <div class="hero-service">
-        <div class="hero-service-label">Estate<br>Planning</div>
-      </div>
+    <!-- SECOND LEAF DIVIDER below tagline -->
+    <div style="display:flex;align-items:center;justify-content:center;margin:6px 0 18px;opacity:0" id="hTag2">
+      <svg width="70" height="24" viewBox="0 0 70 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 12 Q35 6 64 12" stroke="#c9a96e" stroke-width="1.1" fill="none"/>
+        <ellipse cx="18" cy="9" rx="6" ry="2.5" fill="none" stroke="#c9a96e" stroke-width=".9" transform="rotate(-25 18 9)"/>
+        <ellipse cx="28" cy="7" rx="5.5" ry="2.3" fill="none" stroke="#c9a96e" stroke-width=".9" transform="rotate(-15 28 7)"/>
+        <ellipse cx="35" cy="6" rx="5" ry="2" fill="none" stroke="#c9a96e" stroke-width=".9"/>
+        <ellipse cx="52" cy="9" rx="6" ry="2.5" fill="none" stroke="#c9a96e" stroke-width=".9" transform="rotate(25 52 9)"/>
+        <ellipse cx="42" cy="7" rx="5.5" ry="2.3" fill="none" stroke="#c9a96e" stroke-width=".9" transform="rotate(15 42 7)"/>
+      </svg>
     </div>
 
-    <!-- CTA buttons -->
+    <!-- SERVICE STRIP -->
+    <div class="hero-services" id="hServices">
+      <div class="hero-service"><div class="hero-service-label">Wills</div></div>
+      <div class="hero-service"><div class="hero-service-label">Lasting Powers<br>of Attorney</div></div>
+      <div class="hero-service"><div class="hero-service-label">Estate<br>Protection</div></div>
+      <div class="hero-service"><div class="hero-service-label">Trusts</div></div>
+      <div class="hero-service"><div class="hero-service-label">Probate<br>Guidance</div></div>
+      <div class="hero-service"><div class="hero-service-label">Estate<br>Planning</div></div>
+    </div>
+
+    <!-- CTA BUTTONS -->
     <div class="hero-btns" id="hBtns">
       <a href="#contact" class="btn-gold">Book a Consultation</a>
       <a href="#services" class="btn-outline">Our Services</a>
     </div>
 
-    <!-- Contact bar -->
+    <!-- CONTACT BAR -->
     <div class="hero-contact-bar" id="hContact">
       <div class="hero-contact-item">
         <div class="hero-contact-icon">✆</div>
