@@ -338,6 +338,12 @@ footer{background:#0f1f17;padding:48px 60px;display:flex;align-items:center;just
   .process-steps::before{display:none}
   .cf-row{grid-template-columns:1fr}
 }
+
+/* Force phone/email links to inherit brand colour, not browser default blue */
+a[href^="tel"],a[href^="mailto"]{color:inherit;text-decoration:none}
+a[href^="tel"]:hover,a[href^="mailto"]:hover{color:var(--gold);text-decoration:none}
+.contact-detail-val a{color:var(--gold-light)!important;text-decoration:none!important}
+
 </style>
 </head>
 <body>
@@ -449,7 +455,7 @@ footer{background:#0f1f17;padding:48px 60px;display:flex;align-items:center;just
     <div class="hero-contact-bar" id="hContact">
       <div class="hero-contact-item">
         <div class="hero-contact-icon">✆</div>
-        <span>07904 750 856</span>
+        <a href="tel:07904750856" style="color:inherit;text-decoration:none">07904 750 856</a>
       </div>
       <div class="hero-contact-item">
         <div class="hero-contact-icon">✉</div>
@@ -653,7 +659,7 @@ footer{background:#0f1f17;padding:48px 60px;display:flex;align-items:center;just
           <div class="contact-detail-icon">✆</div>
           <div>
             <div class="contact-detail-label">Phone</div>
-            <div class="contact-detail-val">07904 750 856</div>
+            <a href="tel:07904750856" class="contact-detail-val" style="color:var(--gold-light);text-decoration:none;font-family:inherit;font-size:inherit">07904 750 856</a>
           </div>
         </div>
         <div class="contact-detail">
