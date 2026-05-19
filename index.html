@@ -163,42 +163,42 @@ nav.scrolled{background:rgba(30,51,41,.97);backdrop-filter:blur(20px);padding:14
 .burger span{display:block;width:22px;height:1.5px;background:var(--white);transition:all .3s}
 
 /* HERO */
-#hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--cream)}
+#hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:#1a2e20}
 /* Decorative leaf SVG background elements */
-.hero-leaf-tr{position:absolute;top:0;right:0;width:clamp(160px,22vw,280px);opacity:.35;pointer-events:none}
-.hero-leaf-bl{position:absolute;bottom:0;left:0;width:clamp(120px,18vw,220px);opacity:.2;pointer-events:none;transform:rotate(180deg)}
-.hero-content{position:relative;z-index:2;max-width:700px;padding:120px 24px 80px}
+.hero-leaf-tr{position:absolute;top:0;right:0;width:clamp(160px,22vw,280px);opacity:.15;pointer-events:none;z-index:2}
+.hero-leaf-bl{position:absolute;bottom:0;left:0;width:clamp(120px,18vw,220px);opacity:.1;pointer-events:none;transform:rotate(180deg);z-index:2}
+.hero-content{position:relative;z-index:3;max-width:700px;padding:120px 24px 80px}
 /* Big V.C. */
-.hero-vc{font-family:var(--serif);font-size:clamp(5rem,14vw,10rem);font-weight:500;letter-spacing:.08em;color:var(--green-dark);line-height:1;opacity:0;transform:translateY(30px)}
+.hero-vc{font-family:var(--serif);font-size:clamp(5rem,14vw,10rem);font-weight:500;letter-spacing:.08em;color:var(--white);line-height:1;opacity:0;transform:translateY(30px)}
 /* Gold horizontal rule with leaf */
 .hero-divider{display:flex;align-items:center;gap:12px;justify-content:center;margin:10px 0 16px;opacity:0}
 .hero-divider-line{flex:1;max-width:120px;height:1px;background:var(--gold)}
 .hero-divider-leaf{color:var(--gold);font-size:1.1rem}
 /* ESTATE PLANNING wordmark */
-.hero-ep{font-family:var(--sans);font-size:clamp(.6rem,2.2vw,.85rem);letter-spacing:.55em;text-transform:uppercase;color:var(--green-dark);font-weight:400;opacity:0}
+.hero-ep{font-family:var(--sans);font-size:clamp(.6rem,2.2vw,.85rem);letter-spacing:.55em;text-transform:uppercase;color:var(--gold-light);font-weight:400;opacity:0}
 /* Tree icon */
 .hero-tree{font-size:clamp(2rem,5vw,3rem);color:var(--gold);margin:22px 0 18px;opacity:0;display:block}
 /* Tagline */
-.hero-tagline{font-family:var(--sans);font-size:clamp(.58rem,1.6vw,.72rem);letter-spacing:.28em;text-transform:uppercase;color:var(--green-dark);margin-bottom:28px;opacity:0;font-weight:400}
+.hero-tagline{font-family:var(--sans);font-size:clamp(.58rem,1.6vw,.72rem);letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.85);margin-bottom:28px;opacity:0;font-weight:400}
 /* Service icons strip */
-.hero-services{display:flex;gap:0;justify-content:center;flex-wrap:wrap;margin:32px 0 40px;opacity:0;border-top:1px solid rgba(45,74,62,.15);border-bottom:1px solid rgba(45,74,62,.15);padding:24px 0}
-.hero-service{display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 16px;border-right:1px solid rgba(45,74,62,.15);min-width:90px}
+.hero-services{display:flex;gap:0;justify-content:center;flex-wrap:wrap;margin:32px 0 40px;opacity:0;border-top:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15);padding:24px 0}
+.hero-service{display:flex;flex-direction:column;align-items:center;gap:10px;padding:0 16px;border-right:1px solid rgba(255,255,255,.15);min-width:90px}
 .hero-service:last-child{border-right:none}
 .hero-service-icon{width:44px;height:44px;background:var(--green-dark);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem}
-.hero-service-label{font-family:var(--sans);font-size:.48rem;letter-spacing:.15em;text-transform:uppercase;color:var(--green-dark);text-align:center;line-height:1.4;font-weight:500}
+.hero-service-label{font-family:var(--sans);font-size:.48rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.75);text-align:center;line-height:1.4;font-weight:500}
 /* CTA buttons */
 .hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;opacity:0}
 .btn-gold{padding:14px 34px;background:var(--gold);color:var(--green-dark);font-family:var(--sans);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;text-decoration:none;transition:all .3s;border:1px solid var(--gold)}
 .btn-gold:hover{background:var(--gold-light);border-color:var(--gold-light)}
-.btn-outline{padding:14px 34px;background:transparent;color:var(--green-dark);font-family:var(--sans);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--green-dark);transition:all .3s}
+.btn-outline{padding:14px 34px;background:transparent;color:var(--white);font-family:var(--sans);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid rgba(255,255,255,.5);transition:all .3s}
 .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
 /* contact bar */
-.hero-contact-bar{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:36px;padding-top:24px;border-top:1px solid rgba(45,74,62,.15);opacity:0}
-.hero-contact-item{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-size:.65rem;color:var(--green-dark);letter-spacing:.05em}
+.hero-contact-bar{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-top:36px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15);opacity:0}
+.hero-contact-item{display:flex;align-items:center;gap:10px;font-family:var(--sans);font-size:.65rem;color:rgba(255,255,255,.85);letter-spacing:.05em}
 .hero-contact-icon{width:28px;height:28px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.75rem;flex-shrink:0}
 .hero-scroll{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:2;opacity:0}
 .hero-scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--gold),transparent);margin:0 auto 6px;animation:scrollPulse 2s ease-in-out infinite}
-.hero-scroll-txt{font-family:var(--sans);font-size:.48rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(45,74,62,.4)}
+.hero-scroll-txt{font-family:var(--sans);font-size:.48rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.4)}
 @keyframes scrollPulse{0%,100%{opacity:.4;transform:scaleY(1)}50%{opacity:1;transform:scaleY(1.1)}}
 
 /* SECTION COMMON */
@@ -380,6 +380,9 @@ a[href^="tel"]:hover,a[href^="mailto"]:hover{color:var(--gold);text-decoration:n
 <main id="main-content">
 <!-- HERO -->
 <section id="hero">
+  <!-- Hero background photo -->
+  <div style="position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1800&q=85') center/cover no-repeat;transform:scale(1.04);z-index:0"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,38,25,.75) 0%,rgba(15,30,20,.88) 100%);z-index:1"></div>
   <!-- Decorative leaves -->
   <svg class="hero-leaf-tr" viewBox="0 0 200 250" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <path d="M180 10 C160 40, 120 60, 80 120 C60 150, 50 180, 60 220" stroke="#c9a96e" stroke-width="1.2" fill="none"/>
