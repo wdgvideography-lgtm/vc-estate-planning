@@ -682,28 +682,32 @@ a[href^="tel"]:hover,a[href^="mailto"]:hover{color:var(--gold);text-decoration:n
       </div>
     </div>
     <div class="reveal-right">
-      <form class="contact-form" onsubmit="submitForm(event)">
+      <form class="contact-form" action="https://formsubmit.co/enquiries@vcestateplanning.co.uk" method="POST" onsubmit="submitForm(event)">
+        <input type="hidden" name="_subject" value="New Enquiry — VC Estate Planning"/>
+        <input type="hidden" name="_captcha" value="false"/>
+        <input type="hidden" name="_template" value="table"/>
+        <input type="hidden" name="_next" value="https://wdgvideography-lgtm.github.io/vc-estate-planning/?sent=1"/>
         <div class="cf-row">
           <div class="cf-field">
             <label>First Name</label>
-            <input type="text" placeholder="Your first name" required/>
+            <input type="text" name="First Name" placeholder="Your first name" required/>
           </div>
           <div class="cf-field">
             <label>Last Name</label>
-            <input type="text" placeholder="Your last name" required/>
+            <input type="text" name="Last Name" placeholder="Your last name" required/>
           </div>
         </div>
         <div class="cf-field">
           <label>Email Address</label>
-          <input type="email" placeholder="your@email.com" required/>
+          <input type="email" name="Email" placeholder="your@email.com" required/>
         </div>
         <div class="cf-field">
           <label>Phone Number</label>
-          <input type="tel" placeholder="Your phone number"/>
+          <input type="tel" name="Phone" placeholder="Your phone number"/>
         </div>
         <div class="cf-field">
           <label>Service of Interest</label>
-          <select>
+          <select name="Service of Interest">
             <option value="">Select a service...</option>
             <option>Wills</option>
             <option>Mirror Wills</option>
@@ -717,7 +721,7 @@ a[href^="tel"]:hover,a[href^="mailto"]:hover{color:var(--gold);text-decoration:n
         </div>
         <div class="cf-field">
           <label>Message</label>
-          <textarea placeholder="Tell us a little about your situation..."></textarea>
+          <textarea name="Message" placeholder="Tell us a little about your situation..."></textarea>
         </div>
         <button type="submit" class="cf-submit">Send Enquiry</button>
       </form>
@@ -821,15 +825,25 @@ function closeMob(){document.getElementById('mobMenu').classList.remove('open');
 // FORM SUBMIT
 function submitForm(e){
   e.preventDefault();
-  const btn=e.target.querySelector('.cf-submit');
+  const form=e.target;
+  const btn=form.querySelector('.cf-submit');
   btn.textContent='Sending...';
-  setTimeout(()=>{
+  btn.disabled=true;
+  const data=new FormData(form);
+  fetch('https://formsubmit.co/enquiries@vcestateplanning.co.uk',{
+    method:'POST',
+    body:data,
+    headers:{'Accept':'application/json'}
+  }).then(r=>{
     btn.textContent='✓ Enquiry Sent!';
     btn.style.background='#3d6b5a';
     btn.style.color='#fff';
-    e.target.reset();
-    setTimeout(()=>{btn.textContent='Send Enquiry';btn.style.background='';btn.style.color=''},3000);
-  },1000);
+    form.reset();
+    setTimeout(()=>{btn.textContent='Send Enquiry';btn.style.background='';btn.style.color='';btn.disabled=false;},4000);
+  }).catch(()=>{
+    btn.textContent='Please try again';
+    btn.disabled=false;
+  });
 }
 </script>
 </body>
