@@ -682,11 +682,7 @@ a[href^="tel"]:hover,a[href^="mailto"]:hover{color:var(--gold);text-decoration:n
       </div>
     </div>
     <div class="reveal-right">
-      <form class="contact-form" action="https://formsubmit.co/enquiries@vcestateplanning.co.uk" method="POST" onsubmit="submitForm(event)">
-        <input type="hidden" name="_subject" value="New Enquiry — VC Estate Planning"/>
-        <input type="hidden" name="_captcha" value="false"/>
-        <input type="hidden" name="_template" value="table"/>
-        <input type="hidden" name="_next" value="https://wdgvideography-lgtm.github.io/vc-estate-planning/?sent=1"/>
+      <form class="contact-form" id="vcContactForm" onsubmit="submitForm(event)">
         <div class="cf-row">
           <div class="cf-field">
             <label>First Name</label>
@@ -825,22 +821,34 @@ function closeMob(){document.getElementById('mobMenu').classList.remove('open');
 // FORM SUBMIT
 function submitForm(e){
   e.preventDefault();
-  const form=e.target;
-  const btn=form.querySelector('.cf-submit');
+  var form=e.target;
+  var btn=form.querySelector('.cf-submit');
   btn.textContent='Sending...';
   btn.disabled=true;
-  const data=new FormData(form);
-  fetch('https://formsubmit.co/enquiries@vcestateplanning.co.uk',{
+  var payload={
+    firstName:form.querySelector('[name="First Name"]').value,
+    lastName:form.querySelector('[name="Last Name"]').value,
+    email:form.querySelector('[name="Email"]').value,
+    phone:form.querySelector('[name="Phone"]').value,
+    service:form.querySelector('[name="Service of Interest"]').value,
+    message:form.querySelector('[name="Message"]').value
+  };
+  fetch('https://assistant-36b1ac32.base44.app/functions/vcEnquiryEmail',{
     method:'POST',
-    body:data,
-    headers:{'Accept':'application/json'}
-  }).then(r=>{
-    btn.textContent='✓ Enquiry Sent!';
-    btn.style.background='#3d6b5a';
-    btn.style.color='#fff';
-    form.reset();
-    setTimeout(()=>{btn.textContent='Send Enquiry';btn.style.background='';btn.style.color='';btn.disabled=false;},4000);
-  }).catch(()=>{
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(payload)
+  }).then(function(r){return r.json();}).then(function(data){
+    if(data.success){
+      btn.textContent='Enquiry Sent!';
+      btn.style.background='#3d6b5a';
+      btn.style.color='#fff';
+      form.reset();
+      setTimeout(function(){btn.textContent='Send Enquiry';btn.style.background='';btn.style.color='';btn.disabled=false;},4000);
+    } else {
+      btn.textContent='Please try again';
+      btn.disabled=false;
+    }
+  }).catch(function(){
     btn.textContent='Please try again';
     btn.disabled=false;
   });
