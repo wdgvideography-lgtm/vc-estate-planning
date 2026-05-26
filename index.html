@@ -814,27 +814,20 @@ document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach((el,i)=>
 function openMob(){document.getElementById('mobMenu').classList.add('open');document.body.style.overflow='hidden'}
 function closeMob(){document.getElementById('mobMenu').classList.remove('open');document.body.style.overflow=''}
 
-// FORM SUBMIT
+// FORM SUBMIT — Formspree (no Base44 dependency)
 function submitForm(e){
   e.preventDefault();
   var form=e.target;
   var btn=form.querySelector('.cf-submit');
   btn.textContent='Sending...';
   btn.disabled=true;
-  var payload={
-    firstName:form.querySelector('[name="First Name"]').value,
-    lastName:form.querySelector('[name="Last Name"]').value,
-    email:form.querySelector('[name="Email"]').value,
-    phone:form.querySelector('[name="Phone"]').value,
-    service:form.querySelector('[name="Service of Interest"]').value,
-    message:form.querySelector('[name="Message"]').value
-  };
-  fetch('https://assistant-36b1ac32.base44.app/functions/vcEnquiryEmail',{
+  var data=new FormData(form);
+  fetch('https://formspree.io/f/xvzyvwgb',{
     method:'POST',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify(payload)
+    body:data,
+    headers:{'Accept':'application/json'}
   }).then(function(r){return r.json();}).then(function(data){
-    if(data.success){
+    if(data.ok){
       btn.textContent='Enquiry Sent!';
       btn.style.background='#3d6b5a';
       btn.style.color='#fff';
