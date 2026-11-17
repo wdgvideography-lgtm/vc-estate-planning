@@ -127,8 +127,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="dns-prefetch" href="https://fonts.googleapis.com"/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -722,6 +722,8 @@ a[href^="tel"]:hover,a[href^="mailto"]:hover{color:var(--gold);text-decoration:n
           <label>Message</label>
           <textarea name="Message" placeholder="Tell us a little about your situation..."></textarea>
         </div>
+        <!-- Spam trap: hidden from people; Formspree discards any submission where it is filled in -->
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none"/>
         <button type="submit" class="cf-submit">Send Enquiry</button>
       </form>
     </div>
